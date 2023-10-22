@@ -26,12 +26,15 @@ describe('ProductSearchService', () => {
   });
 
   it('should return Products correctly', () => {
+    //ARRANGE
     const mockName = 'notebook';
     const url = `${service.apiUrl}/products?name=${mockName}`;
     let result: Product[] = [];
 
+    //ACT
     service.searchByName(mockName).subscribe((products) => (result = products));
 
+    //ASSERT
     const request = httpMock.expectOne(url);
     request.flush(mockProducts);
     expect(request.request.method).toBe('GET');
