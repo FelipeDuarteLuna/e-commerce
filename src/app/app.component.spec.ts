@@ -3,13 +3,14 @@ import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { LayoutModule } from 'modules/layout';
+import { ProductSearchComponent } from 'product-search';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, LayoutModule],
+      imports: [RouterTestingModule, LayoutModule, ProductSearchComponent],
       declarations: [AppComponent, NxWelcomeComponent],
     }).compileComponents();
 
