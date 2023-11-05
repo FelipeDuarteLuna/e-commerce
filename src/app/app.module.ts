@@ -7,6 +7,7 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 import { LayoutModule } from 'modules/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductSearchComponent } from 'product-search';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -16,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LayoutModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ProductSearchComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
