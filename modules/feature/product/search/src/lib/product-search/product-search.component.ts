@@ -38,7 +38,7 @@ export class ProductSearchComponent implements OnInit {
       // Colocar os Operadores
       debounceTime(400),
       distinctUntilChanged(),
-      filter((value) => value.length > 1),
+      filter((value) => value.length > 0),
       switchMap((value) => this.productSearchService.searchByName(value))
       //map((value) => `VALOR TRANSFORMADO: ${value}`)
     ); //.subscribe( value => console.log(value));
