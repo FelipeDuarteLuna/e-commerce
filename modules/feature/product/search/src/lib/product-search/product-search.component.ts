@@ -1,4 +1,4 @@
-import { ProductSearchService, mockProducts } from 'product-data-access';
+import { ProductSearchService } from 'product-data-access';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
@@ -29,7 +29,7 @@ import { Product } from 'modules/data-access/product/src/lib/models/product.mode
 })
 export class ProductSearchComponent implements OnInit {
   control = new FormControl('', { nonNullable: true });
-  products$!: Observable<Product[]>; //products = mockProducts;
+  products$!: Observable<Product[]>;
 
   constructor(private productSearchService: ProductSearchService) {}
 
