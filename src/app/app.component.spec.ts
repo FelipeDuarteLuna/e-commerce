@@ -4,7 +4,6 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { LayoutModule } from 'modules/layout';
 import { ProductSearchComponent } from 'product-search';
-import { ProductSearchService } from 'product-data-access';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
