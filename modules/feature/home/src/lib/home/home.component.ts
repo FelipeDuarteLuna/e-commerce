@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { mockProducts } from 'product-data-access';
+import { RecommendedProductsService } from 'product-data-access';
 
 @Component({
   selector: 'lib-home',
@@ -7,6 +7,7 @@ import { mockProducts } from 'product-data-access';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  constructor(private recommendedProductsService: RecommendedProductsService) {}
 
-  products = mockProducts;
+  products$ = this.recommendedProductsService.getProducts();
 }
