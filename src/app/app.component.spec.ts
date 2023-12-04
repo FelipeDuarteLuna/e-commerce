@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { LayoutModule } from 'modules/layout';
 import { ProductSearchComponent } from 'product-search';
@@ -17,7 +16,7 @@ describe('AppComponent', () => {
         ProductSearchComponent,
         HttpClientTestingModule,
       ],
-      declarations: [AppComponent, NxWelcomeComponent],
+      declarations: [AppComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
