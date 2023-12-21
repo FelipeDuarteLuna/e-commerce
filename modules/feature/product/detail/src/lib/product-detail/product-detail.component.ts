@@ -1,7 +1,8 @@
+import { Product, ProductSearchService } from 'product-data-access';
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, map } from 'rxjs';
+import { Observable, map, switchMap } from 'rxjs';
 
 function getParamsId(): Observable<string> {
   return inject(ActivatedRoute).params.pipe(map((params) => params['id']));
@@ -15,7 +16,9 @@ function getParamsId(): Observable<string> {
   styleUrl: './product-detail.component.scss',
 })
 export class ProductDetailComponent {
-  activatedRoute = inject(ActivatedRoute);
-  // constructor(private activatedRoute: ActivatedRoute) {}
-  id$ = getParamsId();
+  constructor(private productSearchService: ProductSearchService) {}
+
+  product$: Observable<Product> = getParamsId().pipe(
+    switchMap((id) => this.productSearchService.getById(id))
+  );
 }
