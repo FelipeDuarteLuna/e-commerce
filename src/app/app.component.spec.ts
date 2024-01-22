@@ -4,6 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { LayoutModule } from 'modules/layout';
 import { ProductSearchComponent } from 'product-search';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CartComponent } from 'product-ui';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -15,6 +16,7 @@ describe('AppComponent', () => {
         LayoutModule,
         ProductSearchComponent,
         HttpClientTestingModule,
+        CartComponent,
       ],
       declarations: [AppComponent],
     }).compileComponents();

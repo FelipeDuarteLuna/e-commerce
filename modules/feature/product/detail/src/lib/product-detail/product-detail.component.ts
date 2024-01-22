@@ -1,4 +1,8 @@
-import { Product, ProductSearchService } from 'product-data-access';
+import {
+  CartService,
+  Product,
+  ProductSearchService,
+} from 'product-data-access';
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
@@ -24,7 +28,10 @@ function getParamsId(): Observable<string> {
   styleUrl: './product-detail.component.scss',
 })
 export class ProductDetailComponent {
-  constructor(private productSearchService: ProductSearchService) {}
+  constructor(
+    private productSearchService: ProductSearchService,
+    public cartService: CartService
+  ) {}
 
   product$: Observable<Product> = getParamsId().pipe(
     switchMap((id) => this.productSearchService.getById(id))

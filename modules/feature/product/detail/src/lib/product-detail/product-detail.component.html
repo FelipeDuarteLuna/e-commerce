@@ -5,7 +5,13 @@
       <div class="product-detail__info">
         <h2>{{ product.description }}</h2>
         <p>{{ product.quantity | quantityDescription }}</p>
-        <button mat-raised-button color="primary">Adicionar ao carrinho</button>
+        <button
+          (click)="cartService.addToCart(product)"
+          mat-raised-button
+          color="primary"
+        >
+          Adicionar ao carrinho
+        </button>
       </div>
     </ng-container>
   </section>
