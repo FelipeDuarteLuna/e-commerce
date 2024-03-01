@@ -10,4 +10,9 @@ export class HomeComponent {
   constructor(private recommendedProductsService: RecommendedProductsService) {}
 
   products$ = this.recommendedProductsService.getProducts();
+
+  log() {
+    // eslint-disable-next-line no-console
+    console.log('Nosso DoubleClick funcionou');
+  }
 }
